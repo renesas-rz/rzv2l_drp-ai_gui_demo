@@ -13,7 +13,7 @@
 #include <SDL2/SDL.h>
 #include "lvgl/lvgl.h"
 #include "lv_drivers/sdl/sdl.h"
-#include "ui/ui.h"
+#include "lvgl/lvgl.h"
 
 /*********************
  *      DEFINES
@@ -39,6 +39,7 @@ static void hal_init(void);
 /**********************
  *   GLOBAL FUNCTIONS
  **********************/
+extern int rz_demo();
 
 /*********************
  *      DEFINES
@@ -71,7 +72,7 @@ int main(int argc, char **argv)
   /*Initialize the HAL (display, input devices, tick) for LVGL*/
   hal_init();
 
-  ui_init();
+  rz_demo();
 
   while(1) {
       /* Periodically call the lv_task handler.
