@@ -2,6 +2,8 @@
 
 This project runs the DRP-AI Demos and the DRP-AI Pre-trained Applications. This avoid the need to use a terminal to use a terminal to start the applications. The DRP-AI demos and Applications have been modifed to work with the GUI framework. See below for more information.
 
+![](https://github.com/renesas-rz/rzv2l_drp-ai_gui_demo/blob/master/images/gui_screeshot_object.png)
+
 ## Running the applications
 
 ### Requirements
