@@ -211,22 +211,8 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Line_crossing_object_counting.cdt.managedbuild.target.gnu.cross.exe.386345584" name="Executable" projectType="cdt.managedbuild.target.gnu.cross.exe"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1577488187;cdt.managedbuild.config.gnu.cross.exe.release.1577488187.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.1432595756;cdt.managedbuild.tool.gnu.cpp.compiler.input.1405538564">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.842333871;cdt.managedbuild.config.gnu.cross.exe.debug.842333871.;cdt.managedbuild.tool.gnu.cross.c.compiler.51872933;cdt.managedbuild.tool.gnu.c.compiler.input.113968667">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.debug.842333871;cdt.managedbuild.config.gnu.cross.exe.debug.842333871.;cdt.managedbuild.tool.gnu.cross.cpp.compiler.318121053;cdt.managedbuild.tool.gnu.cpp.compiler.input.1899262737">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cross.exe.release.1577488187;cdt.managedbuild.config.gnu.cross.exe.release.1577488187.;cdt.managedbuild.tool.gnu.cross.c.compiler.1155270359;cdt.managedbuild.tool.gnu.c.compiler.input.1056785500">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope"/>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="scannerConfiguration"/>
 </cproject>
