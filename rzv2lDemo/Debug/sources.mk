@@ -1,0 +1,91 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+ASM_SRCS := 
+C++_SRCS := 
+CC_SRCS := 
+CPP_SRCS := 
+CXX_SRCS := 
+C_SRCS := 
+C_UPPER_SRCS := 
+OBJ_SRCS := 
+O_SRCS := 
+S_UPPER_SRCS := 
+C++_DEPS := 
+CC_DEPS := 
+CPP_DEPS := 
+CXX_DEPS := 
+C_DEPS := 
+C_UPPER_DEPS := 
+EXECUTABLES := 
+OBJS := 
+
+# Every subdirectory with source files must be described here
+SUBDIRS := \
+images \
+lv_drivers/display \
+lv_drivers/gtkdrv \
+lv_drivers/indev \
+lv_drivers/sdl \
+lv_drivers/wayland \
+lv_drivers/win32drv \
+lv_drivers \
+lvgl/env_support/rt-thread \
+lvgl/env_support/rt-thread/squareline \
+lvgl/src/core \
+lvgl/src/draw/arm2d \
+lvgl/src/draw \
+lvgl/src/draw/nxp \
+lvgl/src/draw/nxp/pxp \
+lvgl/src/draw/nxp/vglite \
+lvgl/src/draw/sdl \
+lvgl/src/draw/stm32_dma2d \
+lvgl/src/draw/sw \
+lvgl/src/draw/swm341_dma2d \
+lvgl/src/extra/layouts/flex \
+lvgl/src/extra/layouts/grid \
+lvgl/src/extra/libs/bmp \
+lvgl/src/extra/libs/ffmpeg \
+lvgl/src/extra/libs/freetype \
+lvgl/src/extra/libs/fsdrv \
+lvgl/src/extra/libs/gif \
+lvgl/src/extra/libs/png \
+lvgl/src/extra/libs/qrcode \
+lvgl/src/extra/libs/rlottie \
+lvgl/src/extra/libs/sjpg \
+lvgl/src/extra \
+lvgl/src/extra/others/fragment \
+lvgl/src/extra/others/gridnav \
+lvgl/src/extra/others/ime \
+lvgl/src/extra/others/imgfont \
+lvgl/src/extra/others/monkey \
+lvgl/src/extra/others/msg \
+lvgl/src/extra/others/snapshot \
+lvgl/src/extra/themes/basic \
+lvgl/src/extra/themes/default \
+lvgl/src/extra/themes/mono \
+lvgl/src/extra/widgets/animimg \
+lvgl/src/extra/widgets/calendar \
+lvgl/src/extra/widgets/chart \
+lvgl/src/extra/widgets/colorwheel \
+lvgl/src/extra/widgets/imgbtn \
+lvgl/src/extra/widgets/keyboard \
+lvgl/src/extra/widgets/led \
+lvgl/src/extra/widgets/list \
+lvgl/src/extra/widgets/menu \
+lvgl/src/extra/widgets/meter \
+lvgl/src/extra/widgets/msgbox \
+lvgl/src/extra/widgets/span \
+lvgl/src/extra/widgets/spinbox \
+lvgl/src/extra/widgets/spinner \
+lvgl/src/extra/widgets/tabview \
+lvgl/src/extra/widgets/tileview \
+lvgl/src/extra/widgets/win \
+lvgl/src/font \
+lvgl/src/hal \
+lvgl/src/misc \
+lvgl/src/widgets \
+. \
+src \
+
