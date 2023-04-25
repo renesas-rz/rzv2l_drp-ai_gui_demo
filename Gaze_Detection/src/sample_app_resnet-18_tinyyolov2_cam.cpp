@@ -37,7 +37,7 @@
 #include "wayland.h"
 /*TinyYOLOv2 Post-Processing*/
 #include "box.h"
-
+#include "mouse.h"
 /*****************************************
 * Global Variables
 ******************************************/
@@ -1416,6 +1416,7 @@ hdmi_end:
 ******************************************/
 void *R_Kbhit_Thread(void *threadid)
 {
+#if 0
     /*Semaphore Variable*/
     int32_t kh_sem_check = 0;
     /*Variable to store the getchar() value*/
@@ -1478,6 +1479,13 @@ err:
 key_hit_end:
     printf("Key Hit Thread Terminated\n");
     pthread_exit(NULL);
+#else
+    mouse_int();
+	while (mouse_getClickevent() == 0 );
+	mouse_close();
+	sem_trywait(&terminate_req_sem);
+	pthread_exit(NULL);
+#endif
 }
 
 /*****************************************
