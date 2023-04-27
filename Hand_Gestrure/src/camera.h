@@ -19,7 +19,7 @@
 /***********************************************************************************************************************
 * File Name    : camera.h
 * Version      : 7.20
-* Description  : RZ/V2L DRP-AI Sample Application for MMPose HRNet_v2 MIPI Camera version
+* Description  : RZ/V2L DRP-AI Sample Application for Darknet-PyTorch YOLOv3 MIPI Camera version
 ***********************************************************************************************************************/
 
 #ifndef CAMERA_H
@@ -27,6 +27,12 @@
 
 #include <linux/videodev2.h>
 #include "define.h"
+
+typedef enum {
+	NOT_SUPPORTED,
+	MIPI_CAMERA,
+	USB_CAMERA
+} cam_t;
 
 class Camera
 {
@@ -58,6 +64,7 @@ class Camera
         int32_t imageLength;
         uint8_t *buffer[CAP_BUF_NUM];
         int8_t udmabuf_file;
+        cam_t cam_type;
 
         struct v4l2_buffer buf_capture;
 
@@ -65,6 +72,7 @@ class Camera
         int8_t start_capture();
         int8_t stop_capture();
         int8_t open_camera_device();
+        cam_t peek_camera_device();
         int8_t init_camera_fmt();
         int8_t init_buffer();
 };
