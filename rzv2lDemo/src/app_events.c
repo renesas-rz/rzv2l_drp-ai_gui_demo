@@ -24,13 +24,13 @@
 
 #define SYSTEM_HRNET "cd ./PoseEstimation && ./sample_app_hrnet_cam"
 
-#define SYSTEM_HEADCNT "cd ./AIDemos/Head_count_cam && ./head_count_cam_app"
-#define SYSTEM_LINECROSSING "cd ./AIDemos/Line_Crossing && ./Line_crossing_object_counting 640 0 640 720"
-#define SYSTEM_FALLDETECT "cd ./AIDemos/Elderly_fall_detection && ./Elderly_fall_detection 0 300 1280 300"
-#define SYSTEM_SAFETYHELMENTDET "cd ./AIDemos/Safety_helmet_vest_cam && ./Safety_helmet_vest_cam_app"
-#define SYSTEM_AGEGENDERDET "cd ./AIDemos/ && ./"
-#define SYSTEM_SAFETYHELMENTDET "cd ./AIDemos/ && ./"
-#define SYSTEM_FACERECOG "cd ./AIDemos/ && ./"
+#define SYSTEM_HEADCNT "cd ./PreTrained/Head_count_cam && ./head_count_cam_app"
+#define SYSTEM_LINECROSSING "cd ./PreTrained/Line_Crossing && ./Line_crossing_object_counting person 150 0 350 450 1"
+#define SYSTEM_FALLDETECT "cd ./PreTrained/Elderly_fall_detection && ./Elderly_fall_detection 0 240 640 240 0"
+#define SYSTEM_AGEGENDERDET "cd ./PreTrained/Age_Gender_Detect && ./Age_Gender_Detect"
+#define SYSTEM_GAZETRACTINGT "cd ./PreTrained/Gaze_Detection && ./Gaze_Detection"
+#define SYSTEM_GESTUREDET "cd ./PreTrained/Hand_Gestrure && ./Hand_Gestrure"
+#define SYSTEM_FACERECOG "cd ./PreTrained//Face_recognition && ./Face_recognition"
 
 
 /******************************************************************************
@@ -187,7 +187,7 @@ void runHRNet(lv_event_t * e)
 }
 
 
-void runPeopleCount(lv_event_t * e)
+void runHeadCount(lv_event_t * e)
 {
 	pid_t child;
 
@@ -241,7 +241,7 @@ void runFallDetection(lv_event_t * e)
     kill(child+1, 9);
 }
 
-void runSafetyHelmetDetection(lv_event_t * e)
+void runFaceRecognition(lv_event_t * e)
 {
 	pid_t child;
 
@@ -277,14 +277,32 @@ void runAgeGenderDetection(lv_event_t * e)
     kill(child+1, 9);
 }
 
-void runFaceRecognition(lv_event_t * e)
+void runGaze(lv_event_t * e)
 {
 	pid_t child;
 
     child = fork();
     if ( child == 0 ) {
 
-		system(SYSTEM_AGEGENDERDET);
+		system(SYSTEM_GAZETRACTINGT);
+    }
+
+    mouse_int();
+    while (mouse_getClickevent() == 0 );
+    mouse_close();
+
+
+    kill(child+1, 9);
+}
+
+void runGesture(lv_event_t * e)
+{
+	pid_t child;
+
+    child = fork();
+    if ( child == 0 ) {
+
+		system(SYSTEM_GESTUREDET);
     }
 
     mouse_int();

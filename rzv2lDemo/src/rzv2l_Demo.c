@@ -48,12 +48,12 @@ AppButtons Pose[] = {
 
 #define APP_PTAPP_NUM_BTNS 6
 AppButtons PretrainedApplications[] = {
-		{ .label = "  Head\nCounter",	 .event = runYoloV5,	.button_label_font_size = SMALL },
-		{ .label = "  Line\nCrossing", .event = runYoloVX, 	.button_label_font_size = SMALL },
-		{ .label = "Falling",		 .event = runtYoloV3, 	.button_label_font_size = SMALL },
-		{ .label = "AgeGender\nDetection", 	.event = runTinyYoloV3, .button_label_font_size = SMALL },
-		{ .label = "  Gaze\nTracking", 		.event = runYoloV2, 	.button_label_font_size = SMALL },
-		{ .label = "  Hand\nGesture", 		.event = runTinyYoloV2, .button_label_font_size = SMALL },
+		{ .label = "  Head\nCounter",		.event = runHeadCount,			.button_label_font_size = SMALL },
+		{ .label = "  Line\nCrossing", 		.event = runLineCrossing, 		.button_label_font_size = SMALL },
+		{ .label = "Falling",		 		.event = runFallDetection, 		.button_label_font_size = SMALL },
+		{ .label = "AgeGender\nDetection", 	.event = runAgeGenderDetection, .button_label_font_size = SMALL },
+		{ .label = "  Gaze\nTracking", 		.event = runGaze, 				.button_label_font_size = SMALL },
+		{ .label = "  Hand\nGesture", 		.event = runGesture, 			.button_label_font_size = SMALL },
 };
 int rz_demo() {
 

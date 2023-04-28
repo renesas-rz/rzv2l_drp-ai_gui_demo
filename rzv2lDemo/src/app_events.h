@@ -29,7 +29,7 @@ void runHRNet(lv_event_t * e);
 
 
 
-void runPeopleCount(lv_event_t * e);
+void runHeadCount(lv_event_t * e);
 
 void runLineCrossing(lv_event_t * e);
 
@@ -40,6 +40,10 @@ void runSafetyHelmetDetection(lv_event_t * e);
 void runAgeGenderDetection(lv_event_t * e);
 
 void runFaceRecognition(lv_event_t * e);
+
+void runGaze(lv_event_t * e);
+
+void runGesture(lv_event_t * e);
 
 
 void app_event_objectdetection(lv_event_t * e);
