@@ -51,9 +51,10 @@ int8_t Camera::start_camera()
     int8_t ret = 0;
     int32_t i = 0;
     int32_t n = 0;
-    uint8_t* word_ptr;
     
-#ifdef INPUT_CORAL
+    cam_type = peek_camera_device();
+
+if ( cam_type == MIPI_CAMERA ) {
     const char* commands[4] =
     {
         "media-ctl -d /dev/media0 -r",
@@ -74,7 +75,8 @@ int8_t Camera::start_camera()
             return -1;
         }
     }
-#endif /* INPUT_CORAL */
+
+}
 
     ret = open_camera_device();
     if (0 != ret) return ret;
@@ -104,7 +106,7 @@ int8_t Camera::start_camera()
         * Note: Do not use memset() for this.
         *       Because it does not work as expected. */
         {
-            word_ptr = buffer[n];
+            uint8_t * word_ptr = buffer[n];
             for(i = 0 ; i < imageLength; i++)
             {
                 word_ptr[i] = 0;
@@ -286,6 +288,48 @@ int8_t Camera::stop_capture()
 * Return value  : 0 if succeeded
 *                 not 0 otherwise
 ******************************************/
+cam_t Camera::peek_camera_device()
+{
+	char dev_name[4096] = {0};
+	struct v4l2_capability fmt;
+	cam_t camera_type = NOT_SUPPORTED;
+
+	for (int i = 0; i < 15; i++)
+	{
+		snprintf(dev_name, sizeof(dev_name), "/dev/video%d", i);
+		m_fd = open(dev_name, O_RDWR);
+		if (-1 == m_fd)
+		{
+			continue;
+		}
+
+		/* Check device is valid (Query Device information) */
+		memset(&fmt, 0, sizeof(fmt));
+		if (-1 == xioctl(m_fd, VIDIOC_QUERYCAP, &fmt))
+		{
+			close(m_fd);
+			return NOT_SUPPORTED;
+		}
+
+		if (0 == strcmp((const char*)fmt.driver, "rzg2l_cru"))
+		{
+			printf("[INFO] CSI2 Camera: %s\n", dev_name);
+			camera_type = MIPI_CAMERA;
+			break;
+
+		} else if ( strcmp((const char*)fmt.driver, "uvcvideo") == 0)
+		{
+
+			printf("[INFO] USB Camera: %s\n", dev_name);
+			camera_type = USB_CAMERA;
+			break;
+		}
+		close(m_fd);
+	}
+	close(m_fd);
+	return camera_type;
+}
+
 int8_t Camera::open_camera_device()
 {
     char dev_name[4096] = {0};
@@ -310,22 +354,22 @@ int8_t Camera::open_camera_device()
             return -1;
         }
 
-#ifdef INPUT_CORAL
-        ret = strcmp((const char*)fmt.driver, "rzg2l_cru");
-        if (0 == ret)
-        {
-            printf("[INFO] CSI2 Camera: %s\n", dev_name);
-            break;
-        }
-#else /* INPUT_CORAL */
-        /* Search USB camera */
-        ret = strcmp((const char*)fmt.driver, "uvcvideo");
-        if (0 == ret)
-        {
-            printf("[INFO] USB Camera: %s\n", dev_name);
-            break;
-        }
-#endif /* INPUT_CORAL */
+		if ( cam_type == MIPI_CAMERA ) {
+	        ret = strcmp((const char*)fmt.driver, "rzg2l_cru");
+	        if (0 == ret)
+	        {
+	            printf("[INFO] CSI2 Camera: %s\n", dev_name);
+	            break;
+	        }
+		} else {
+	        /* Search USB camera */
+	        ret = strcmp((const char*)fmt.driver, "uvcvideo");
+	        if (0 == ret)
+	        {
+	            printf("[INFO] USB Camera: %s\n", dev_name);
+	            break;
+	        }
+		}
         close(m_fd);
     }
 
