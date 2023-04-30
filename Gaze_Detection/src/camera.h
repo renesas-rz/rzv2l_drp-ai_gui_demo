@@ -1,8 +1,8 @@
 /***********************************************************************************************************************
 * DISCLAIMER
-* This software is suheadied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
+* This software is supplied by Renesas Electronics Corporation and is only intended for use with Renesas products. No
 * other uses are authorized. This software is owned by Renesas Electronics Corporation and is protected under all
-* aheadicable laws, including copyright laws.
+* applicable laws, including copyright laws.
 * THIS SOFTWARE IS PROVIDED "AS IS" AND RENESAS MAKES NO WARRANTIES REGARDING
 * THIS SOFTWARE, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
 * FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. ALL SUCH WARRANTIES ARE EXPRESSLY DISCLAIMED. TO THE MAXIMUM
@@ -19,7 +19,7 @@
 /***********************************************************************************************************************
 * File Name    : camera.h
 * Version      : 7.20
-* Description  : RZ/V2L DRP-AI Sample Application for  ResNet-18 with TinyYOLOv2 MIPI Camera version
+* Description  : RZ/V2L DRP-AI Sample Application for Darknet-PyTorch YOLOv3 MIPI Camera version
 ***********************************************************************************************************************/
 
 #ifndef CAMERA_H
@@ -27,6 +27,12 @@
 
 #include <linux/videodev2.h>
 #include "define.h"
+
+typedef enum {
+	NOT_SUPPORTED,
+	MIPI_CAMERA,
+	USB_CAMERA
+} cam_t;
 
 class Camera
 {
@@ -58,6 +64,7 @@ class Camera
         int32_t imageLength;
         uint8_t *buffer[CAP_BUF_NUM];
         int8_t udmabuf_file;
+        cam_t cam_type;
 
         struct v4l2_buffer buf_capture;
 
@@ -65,6 +72,7 @@ class Camera
         int8_t start_capture();
         int8_t stop_capture();
         int8_t open_camera_device();
+        cam_t peek_camera_device();
         int8_t init_camera_fmt();
         int8_t init_buffer();
 };

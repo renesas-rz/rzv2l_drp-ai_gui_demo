@@ -132,7 +132,7 @@ const static double anchors[] =
 * Macro for Application
 ******************************************/
 /* Coral Camera support */
-//#define INPUT_CORAL
+#define INPUT_CORAL
 
 /*Maximum DRP-AI Timeout threshold*/
 #define DRPAI_TIMEOUT               (5)
