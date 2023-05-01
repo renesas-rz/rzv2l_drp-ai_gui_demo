@@ -19,6 +19,7 @@ static struct input_event ie;
 
 
 int mouse_int (void ) {
+	sleep(10);
 	if((fd = open(MOUSEFILE, O_RDONLY)) == -1) {
 		printf("Device open ERROR\n");
 		return (-1);

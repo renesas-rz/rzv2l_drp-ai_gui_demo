@@ -173,7 +173,7 @@ const static std::string label_list = "coco-labels-2014_2017.txt";
 * Macro for Application
 ******************************************/
 /* Coral Camera support */
-//#define INPUT_CORAL
+#define INPUT_CORAL
 
 /*Maximum DRP-AI Timeout threshold*/
 #define DRPAI_TIMEOUT               (5)
