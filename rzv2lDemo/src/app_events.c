@@ -24,12 +24,12 @@
 
 #define SYSTEM_HRNET "cd ./PoseEstimation && ./sample_app_hrnet_cam"
 
-#define SYSTEM_HEADCNT "cd ./PreTrained/Head_count_cam && ./head_count_cam_app"
+#define SYSTEM_HEADCNT "cd ./PreTrained/Head_Count && ./Head_count_cam_app"
 #define SYSTEM_LINECROSSING "cd ./PreTrained/Line_Crossing && ./Line_crossing_object_counting person 150 0 350 450 1"
 #define SYSTEM_FALLDETECT "cd ./PreTrained/Elderly_fall_detection && ./Elderly_fall_detection 0 240 640 240 0"
 #define SYSTEM_AGEGENDERDET "cd ./PreTrained/Age_Gender_Detect && ./Age_Gender_Detect"
 #define SYSTEM_GAZETRACTINGT "cd ./PreTrained/Gaze_Detection && ./Gaze_Detection"
-#define SYSTEM_GESTUREDET "cd ./PreTrained/Hand_Gestrure && ./Hand_Gestrure"
+#define SYSTEM_GESTUREDET "cd ./PreTrained/Hand_Gesture && ./Hand_Gesture"
 #define SYSTEM_FACERECOG "cd ./PreTrained//Face_recognition && ./Face_recognition"
 
 

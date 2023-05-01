@@ -70,7 +70,7 @@ int rz_demo() {
 	lv_obj_add_event_cb(obj_pose_scr.screen, app_event_pose, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(obj_ptd_scr.screen, app_event_pretrainedapps, LV_EVENT_ALL, NULL);
 
-	AppStart(&obj_det_scr);
+	AppStart(&obj_ptd_scr);
 	return 0;
 }
 
