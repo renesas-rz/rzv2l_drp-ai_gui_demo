@@ -1575,7 +1575,7 @@ int32_t main(int32_t argc, char * argv[])
     udmabuf_address &=0xFFFFFFFF;
 
     printf("RZ/V2L DRP-AI Sample Application\n");
-    printf("Model : Resnet34 with TinyYOLOv2 | fairface_cam, tinyyolov2_cam\n");
+    printf("Model : Resnet34 with TinyYOLOv2 | tinyyolov2_cam, tinyyolov2_cam\n");
     printf("Input : Coral Camera\n");
 
     /*DRP-AI Driver Open*/

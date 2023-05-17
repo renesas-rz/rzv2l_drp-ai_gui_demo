@@ -69,7 +69,7 @@ const static double anchors[] =
 ******************************************/
 /*Inference Related Parameters*/
 #define AI0_DESC_NAME               "tinyyolov2_cam"
-#define AI_DESC_NAME                "fairface_cam"
+#define AI_DESC_NAME                "tinyyolov2_cam"
 
 /*Age_gender Related*/
 #define INF_OUT_SIZE                (18)
