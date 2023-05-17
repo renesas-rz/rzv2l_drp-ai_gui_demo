@@ -46,7 +46,8 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: main-build
+all:
+	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
 main-build: sample_app_tinyyolov2_cam
@@ -64,6 +65,10 @@ clean:
 	-$(RM) sample_app_tinyyolov2_cam
 	-@echo ' '
 
-.PHONY: all clean dependents main-build
+post-build:
+	-cp sample_app_tinyyolov2_cam ../../exe/ObjectDetection
+	-@echo ' '
+
+.PHONY: all clean dependents main-build post-build
 
 -include ../makefile.targets
