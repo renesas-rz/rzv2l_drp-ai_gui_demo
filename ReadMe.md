@@ -9,12 +9,12 @@ This project runs the DRP-AI Demos and the DRP-AI Pre-trained Applications. This
 ### Requirements
 - Eclipse IDE is needed to Build the project.
 - SDL Needs to be installed during Yocto Build.
--   In the Yocto configuration file "build/conf/local.conf"
--   Add `IMAGE_INSTALL_append = " libsdl2-dev"`
+  - In the Yocto configuration file "build/conf/local.conf"
+  - Add `IMAGE_INSTALL_append = " libsdl2-dev"`
 - Install the RZV2L SDK generated from Yocto
 - Due to it hub size constraints the following files cannot be uploaded
--   yolov3_cam_weight.dat
--   hrnet_cam_weight.dat
+  - yolov3_cam_weight.dat
+  - hrnet_cam_weight.dat
 
   
 ### Getting Started
